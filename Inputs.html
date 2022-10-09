@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Inputs</title>
+    <style>
+      .text {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+
+        margin: 2%;
+      }
+      .extra {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 100%;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        margin: 2%;
+      }
+      .text i {
+        color: red;
+      }
+      .text div {
+        margin-left: 5%;
+      }
+      .input {
+        margin: 5%;
+        margin-top: 1%;
+        width: 75%;
+        height: 30px;
+        border-radius: 7px;
+        border: 0.1px solid grey;
+      }
+      .text textarea {
+        margin: 5%;
+        margin-top: 1%;
+        width: 75%;
+        height: 64px;
+        border-radius: 7px;
+        border: 0.1px solid grey;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .InputAddOn {
+        display: flex;
+        width: 75%;
+        height: 30px;
+        border: 1px solid grey;
+        border-radius: 5px;
+      }
+
+      .InputAddOn-field {
+        flex: 1;
+        border: 0px;
+      }
+      .InputAddOn button {
+        border-radius: 5px;
+        margin: 0;
+        border: 1px solid grey;
+      }
+      .Slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1rem;
+        background-color: lightgray;
+        transition: 0.3s;
+      }
+      .Slider::before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 1px;
+        bottom: 1px;
+        border-radius: 50%;
+        background-color: white;
+        transition: 0.3s;
+      }
+      .checked:checked + .Slider::before {
+        transform: translateX(20px);
+      }
+      .checked {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .checked:checked + .Slider {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #e8e8e8;
+      width: 100%;
+      height: 99vh;
+      display: flex;
+    "
+  >
+    <div
+      style="
+        width: 50%;
+        height: 90%;
+        background-color: white;
+        margin-left: 25%;
+        margin-top: 2.5%;
+        border-radius: 12px;
+        box-shadow: 2px 2px rgb(209, 207, 207);
+        display: flex;
+      "
+    >
+      <div class="text">
+        <div style="margin-top: 2%; margin-bottom: 0%; width: 75%">
+          Text Field <i>&#42;</i>
+        </div>
+        <input class="input" type="text" placeholder="  Input Text" required />
+
+        <div>
+          Select Field
+          <img
+            src="https://imgs.search.brave.com/i5sjxlk6Ywtb3aBiZIoxKfboPn2BaNPgFCsBjH-6TdQ/rs:fit:256:256:1/g:ce/aHR0cHM6Ly93d3cu/aWNvbnNkYi5jb20v/aWNvbnMvZG93bmxv/YWQvZ3JheS9pbmZv/LTI1Ni5naWY.gif"
+            width="12px"
+          />
+        </div>
+        <input class="input" type="number" placeholder=" Select" />
+        <div>Text Area</div>
+        <textarea placeholder=" Text area"></textarea>
+        <div>
+          Text Field with Add-ons <i>&#42;</i>
+          <img
+            src="https://imgs.search.brave.com/i5sjxlk6Ywtb3aBiZIoxKfboPn2BaNPgFCsBjH-6TdQ/rs:fit:256:256:1/g:ce/aHR0cHM6Ly93d3cu/aWNvbnNkYi5jb20v/aWNvbnMvZG93bmxv/YWQvZ3JheS9pbmZv/LTI1Ni5naWY.gif"
+            width="12px"
+          />
+        </div>
+        <div class="InputAddOn">
+          <span
+            class="InputAddOn-item"
+            style="align-self: center; padding-left: 5px"
+          >
+            Label</span
+          >
+          <input class="InputAddOn-field" placeholder=" Input Text" />
+          <button class="InputAddOn-item">Button</button>
+        </div>
+      </div>
+
+      <div class="extra">
+        <input
+          type="text"
+          placeholder="&#xe8b6; Search"
+          class="input"
+          style="
+            font-family: Roboto, FontAwesome, 'Material Icons';
+            margin-top: 10%;
+          "
+        />
+
+        <div
+          style="
+            width: 30%;
+            display: flex;
+            height: 30px;
+            border: 1px solid grey;
+            margin-left: 5%;
+            border-radius: 5px;
+          "
+        >
+          <button
+            class="InputAddOn-item"
+            style="border: 0px; border-radius: 5px 0px 0px 5px"
+          >
+            -
+          </button>
+          <input class="InputAddOn-field" style="width: 30%" value="1" />
+          <button
+            class="InputAddOn-item"
+            style="border: 0px; border-radius: 0px 5px 5px 0px"
+          >
+            +
+          </button>
+        </div>
+
+        <div style="margin: 5%">
+          <label><input type="checkbox" class="check" />Checkbox</label>
+        </div>
+        <label style="margin: 5%"> <input type="radio" />Radio Button</label>
+
+        <div style="margin: 5%">
+          <label style="width: 80px; height: 35px; position: relative"
+            ><input type="checkbox" class="checked" /><span
+              class="Slider"
+            ></span
+            >Swit</label
+          ><label>Switch</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
